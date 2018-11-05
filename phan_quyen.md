@@ -1,49 +1,50 @@
-Centos 7 dùng để làm gì?
--	Nó là hệ điều hành có mã nguồn mở
--	Thường dùng để chạy web, cơ sở dữ liệu…..
+# Tổng quan 
 
-Tại sao lại dùng centos 7 mà không dùng các hệ điều hành khác? Điểm nổi bật của nó?
--	Nó là hệ điều hành chạy theo kiểu sever
--	Nhẹ hơn và bảo mật hơn 
+- Hệ thống người dùng ở trong centos 7 gốm 2 loại:
 
-Hệ thống người dùng ở trong centos 7 gốm 2 loại:
--	Root ( là tài khoản có quyền cao nhất trong hệ thống) 
--	User
-Để thao tác với hệ thống người dùng thì phải đứng ở bên root.
+	-	Root ( là tài khoản có quyền cao nhất trong hệ thống) 
 
-Tất cả thông tin của root và user đều  được lưu trong một file để kiểm tra file thì dùng câu lệnh
+	-	User : Là tài khoản mà được người quản trị cấp cho nhưng bị giới hạn bởi các quyền 
 
-Cat	/ etc/group: thông tin về các tài khoản root
+	- Để thao tác với hệ thống người dùng thì phải đứng ở bên root.
 
-Cat: mở file 
+	- Tất cả thông tin của root và user đều  được lưu trong một file để kiểm tra file thì dùng câu lệnh
 
-Etc/group: tên file
+	- Cat	/ etc/group: thông tin về các tài khoản root
 
-Cat	/etc/passwd
+	- lệnh Cat: mở file 
 
-Clear: xóa màn hình 
+		ví dụ: Cat	/etc/passwd
 
-Để tạo ra một group : groupadd (tên group)
+- Clear: xóa màn hình 
 
-VỀ USER
+- Để tạo ra một group : groupadd (tên group)
 
-Một group có thể chứa nhiều user và một user có thể thuộc nhiều group
+- Để xóa một group : groupdel ( tên group)
 
-Một user có thể thuộc tối đa 17 group : 1 primary group và 16 secondary group 
+# VỀ USER
 
-Để tạo ra một user: useradd ( tên user
+- Một group có thể chứa nhiều user và một user có thể thuộc nhiều group
 
-Khi tạo ra một user thì nó sẽ được mặc định cấp cho 1 thư mục trong home
+- Một user có thể thuộc tối đa 17 group : 1 primary group và 16 secondary group 
 
-Kiểm tra xem có bao nhiêu user : ls –l
+- Để tạo ra một user: useradd ( tên user)
 
-Khi tạo ra một user thì sẽ có 1 group mặc định được tao ra cùng tên với user 
+- Xóa user là: userdel (tên user)
 
-Kiểm tra user thuộc group nào: groups (tên user)
+- Khi tạo ra một user thì nó sẽ được mặc định cấp cho 1 thư mục trong home
 
-Đổi pass user: passwd (tên user)
+- Kiểm tra xem có bao nhiêu user : ls –l
 
-Các tham số để thay đổi thông tin
+- Khi tạo ra một user thì sẽ có 1 group mặc định được tao ra cùng tên với user 
+
+- Kiểm tra user thuộc group nào: groups (tên user)
+ 
+- Đổi pass user: passwd (tên user)
+
+- Các tham số để thay đổi thông tin
+
+# Một vài tham số cần lưu ý: 
 
 -c thêm thông tin cho user 
 
@@ -71,7 +72,27 @@ Các tham số để thay đổi thông tin
 
 -U mở khóa mật khẩu user khi chưa bị hết hạn 
 
+# Cấp quyền cho user và group
 
+- Ta dùng lệnh chmod
+
+- Để có quyền đọc viết hoặc chỉnh sửa một file thì mỗi user cần được user root cấp quyền cho mới có thể thự thi được 
+
+	- Quyền đọc: r = 4
+	
+	- Quyền Viết: w = 2 
+	
+	- Quyền thực thi: x = 1
+	
+- Kí tự - đầu tiên là một cờ đặc biệt để chỉ loại file, - với file thông thường, d với thư mục, c với thiết bị, l với liên kết (liên kết tới một file khác).
+
+-o+rws: cho phép user sở hữu có full quyền
+
+- g+rw: cho phép group sở hữu có quyền đọc và ghi
+
+- u+w: cho phép các user còn lại có quyền đọc
+
+- a+rws: cho phép toàn bộ user có full quyền (777)
 
 
 

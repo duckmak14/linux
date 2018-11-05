@@ -1,4 +1,4 @@
-Phân quyền và quản lý file trong centos7 
+#Phân quyền và quản lý file trong centos7 
 
 Hệ thống thư mục phân cấp gồm: 
 
