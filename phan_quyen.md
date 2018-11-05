@@ -86,7 +86,7 @@
 	
 - Kí tự - đầu tiên là một cờ đặc biệt để chỉ loại file, - với file thông thường, d với thư mục, c với thiết bị, l với liên kết (liên kết tới một file khác).
 
--o+rws: cho phép user sở hữu có full quyền
+- o+rws: cho phép user sở hữu có full quyền
 
 - g+rw: cho phép group sở hữu có quyền đọc và ghi
 

@@ -72,6 +72,14 @@
 	- network mạng 
 	
 ![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_15.png)
+
+	- Ở đây có 3 cách chọn kiểu kết nối card mạng cho máy ảo là Bridged NAT và Host-only
+
+		- Bridged máy ảo sẽ được cấp 1 địa chỉ có cùng subnet với máy thật.	
+
+		- NAT sẽ có 1 card mạng ảo cho máy ảo này và nó phải thực hiện kỹ thuật NAT để kết nối ra bên ngoài`
+
+		- Host-only máy ảo chỉ có thể giao tiếp với máy thật đang mà nó đang chạy trên đó chứ ko thể truy cập ra ngoài mạng.
 	
 	- USB
 	
