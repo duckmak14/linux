@@ -28,6 +28,16 @@
 
 ![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_4.png)
 
+- Ta sẽ chọn bộ nhớ cho máy ảo 
+
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_20.png)
+
+	- Ta có 2 mục để chọn ở đây:
+
+		- store virtual: tao một máy ảo bằng 1 file
+		
+		- split virtual: Tạo máy ảo thành nhiêu file việc này sẽ giúp máy ảo chạy nhanh hơn 
+
 - Rồi ta chọn customize hardware để tùy chọn cài đặt máy ảo 
 
 ![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_5.png)
@@ -36,13 +46,48 @@
 
 - Đây là bảng ta dùng để cài đặt tùy chọn cho máy ảo 
 
-	- memory :Bộ nhớ máy tính (RAM)
+	- memory :Bộ nhớ máy tính (RAM) có thể là 1GB 2 hay 4 tùy thuộc vào chúng ta lựa chọn 
 	
 	-processors: bộ xử lý 
+	
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_13.png)
+
+	- trong mục processors thì ta có
+		- Number of processors : số CPU
+		
+		- Number of cores per processors: số core trong một CPU
+		
+		- Total processors core:  tổng bộ vi xử lý
+		
+	- virtualization engine: Công cụ ảo hóa
+	
+		-
 
 	- CD/DVD: ổ đĩa 
 	
-	- network mạng và một vài mục khác như ta thấy 
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_14.png)
+
+		- Use iso image file: sử dụng file iso nào để tạo máy ảo 
+	
+	- network mạng 
+	
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_15.png)
+	
+	- USB
+	
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_16.png)
+	
+	- souncard
+	
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_17.png)
+	
+	- printer
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_18.png))
+	
+	- Display
+	
+![](https://github.com/duckmak14/anh/blob/master/setup_centos7/Screenshot_19.png)
+	
 	
 - Sau khi cài xong ta bắt đầu cho máy ảo chạy 
 
