@@ -1,50 +1,70 @@
-# Tổng quan 
+# Phân quyền và cấp quyền 
+
+[ 1.Tổng quan ](#tongquan)
+
+[ 2.Về user ](user)
+
+[ 3.Một vài tham số ](#note)
+
+[ 4.Cấp quyền cho user ](#capquyen)
+
+<a name="tongquan">
+
+# 1.Tổng quan 
 
 - Hệ thống người dùng ở trong centos 7 gốm 2 loại:
 
 	-	Root ( là tài khoản có quyền cao nhất trong hệ thống) 
-
+	
+		- Để thao tác với hệ thống người dùng thì phải đứng ở bên root.
+	
 	-	User : Là tài khoản mà được người quản trị cấp cho nhưng bị giới hạn bởi các quyền 
+	
+		- Khi một tài khoản user thường muốn dùng lệnh tác động lên user thì có thể dùng lệnh ` sudo ` mà không cần cấp quyền đặc biệt 
+		
+		- Một user bình thường muốn dùng được lệnh `sudo` thì cần được cấp quyền để sử dụng đó là bằng cách tạo ra một group và cấp quyền cho group rồi thêm user vào group được cấp quyền và tài khoản này sẽ được gọi là administrator
+		
+		- Tất cả thông tin của root và user đều  được lưu trong một file để kiểm tra file thì dùng câu lệnh
 
-	- Để thao tác với hệ thống người dùng thì phải đứng ở bên root.
+		- `Cat /etc/group`: thông tin về các tài khoản root
 
-	- Tất cả thông tin của root và user đều  được lưu trong một file để kiểm tra file thì dùng câu lệnh
+		- lệnh `Cat`: mở file 
 
-	- Cat	/ etc/group: thông tin về các tài khoản root
+			ví dụ: `Cat	/etc/passwd`
 
-	- lệnh Cat: mở file 
+- `Clear`: xóa màn hình 
 
-		ví dụ: Cat	/etc/passwd
+- Để tạo ra một group : `groupadd (tên group)`
 
-- Clear: xóa màn hình 
+- Để xóa một group : `groupdel ( tên group)`
 
-- Để tạo ra một group : groupadd (tên group)
+<a name="user">
 
-- Để xóa một group : groupdel ( tên group)
-
-# VỀ USER
+# 2.VỀ USER
 
 - Một group có thể chứa nhiều user và một user có thể thuộc nhiều group
 
 - Một user có thể thuộc tối đa 17 group : 1 primary group và 16 secondary group 
 
-- Để tạo ra một user: useradd ( tên user)
+- Để tạo ra một user: `useradd ( tên user)`
 
-- Xóa user là: userdel (tên user)
+- Xóa user là: `userdel (tên user)`
 
 - Khi tạo ra một user thì nó sẽ được mặc định cấp cho 1 thư mục trong home
 
-- Kiểm tra xem có bao nhiêu user : ls –l
+- Kiểm tra xem có bao nhiêu user : `ls –l`
 
 - Khi tạo ra một user thì sẽ có 1 group mặc định được tao ra cùng tên với user 
 
-- Kiểm tra user thuộc group nào: groups (tên user)
+- Kiểm tra user thuộc group nào: `groups (tên user)`
  
-- Đổi pass user: passwd (tên user)
+- Đổi pass user: `passwd (tên user)`
 
 - Các tham số để thay đổi thông tin
 
-# Một vài tham số cần lưu ý: 
+<a name="note">
+
+# 3.Một vài tham số cần lưu ý: 
 
 -c thêm thông tin cho user 
 
@@ -72,9 +92,11 @@
 
 -U mở khóa mật khẩu user khi chưa bị hết hạn 
 
-# Cấp quyền cho user và group
+<a name="capquyen">
 
-- Ta dùng lệnh chmod
+# 4.Cấp quyền cho user và group
+
+- Ta dùng lệnh `chmod`
 
 - Để có quyền đọc viết hoặc chỉnh sửa một file thì mỗi user cần được user root cấp quyền cho mới có thể thự thi được 
 
@@ -93,6 +115,3 @@
 - u+w: cho phép các user còn lại có quyền đọc
 
 - a+rws: cho phép toàn bộ user có full quyền (777)
-
-
-
