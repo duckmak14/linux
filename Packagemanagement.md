@@ -1,19 +1,23 @@
 # Package manager 
-    - Package manager là một tập hợp phần mềm dùng để quản lý việc cài đặt và nâng cấp các ứng dụng
-    - Các gói có thể phụ thuộc vào nhau 
-    - package manager theo dõi các bản cập nhật và nâng cấp của các chương trình phần mềm 
-    - package manager là nơi lưu trữ chứa các phần mềm, các file cấu hình, và thông tin về các phụ thuộc 
-    - Các tính năng mà hầu hết các ứng dụng quản lý gói cung cấp là: 
-        - Package download: cho phép người dùng tải về các gói từ một nhà cung cấp và lưu trữ trong kho lưu trữ 
-        - Dependency resolution: cung cấp thông tin về các gói khác được yêu cầu bởi gói trong câu hỏi giúp quản lý cập nhật 
-        - A standard binary package format: các gói được chuẩn hóa một cách thống nhất trên toàn hệ thống
-        - Quality control: - Để  kiểm tra phần mềm có ổn định hay không và gây ít lỗi 
-        - Additional system-related configuration and functionality: Cập nhật bản vá lỗi cho phần mềm được phân phối trong các gói 
-    - Tất  cả các hệ điều hành đều cung cấp 2 loại gói đó là gói loại cấp độ: cao và thấp 
-    - Ta cài đặt các gói từ nhà cung cấp 
-    - Các gói có thể hoạt độc lập nhưng có những gói còn hoạt động theo group 
-    - Một số gói ở cấp độ cao có thể dùng được gói ở cấp độ thấp nếu như cần tới
-    - Khi cài đặt một gói đơn lẻ có thể kết quả là hàng chục hoặc hàng trăm gói phục thuộc được cài đặt theo 
+
+
+- Package manager là một tập hợp phần mềm dùng để quản lý việc cài đặt và nâng cấp các ứng dụng   
+- Các gói có thể phụ thuộc vào nhau 
+- package manager theo dõi các bản cập nhật và nâng cấp của các chương trình phần mềm 
+- package manager là nơi lưu trữ chứa các phần mềm, các file cấu hình, và thông tin về các phụ thuộc 
+- Các tính năng mà hầu hết các ứng dụng quản lý gói cung cấp là: 
+    - Package download: cho phép người dùng tải về các gói từ một nhà cung cấp và lưu trữ trong kho lưu trữ 
+    - Dependency resolution: cung cấp thông tin về các gói khác được yêu cầu bởi gói trong câu hỏi giúp quản lý cập nhật 
+    - A standard binary package format: các gói được chuẩn hóa một cách thống nhất trên toàn hệ thống
+    - Quality control: - Để  kiểm tra phần mềm có ổn định hay không và gây ít lỗi 
+    - Additional system-related configuration and functionality: Cập nhật bản vá lỗi cho phần mềm được phân phối trong các gói 
+- Tất  cả các hệ điều hành đều cung cấp 2 loại gói đó là gói loại cấp độ: cao và thấp 
+- Ta cài đặt các gói từ nhà cung cấp 
+- Các gói có thể hoạt độc lập nhưng có những gói còn hoạt động theo group 
+- Một số gói ở cấp độ cao có thể dùng được gói ở cấp độ thấp nếu như cần tới
+- Khi cài đặt một gói đơn lẻ có thể kết quả là hàng chục hoặc hàng trăm gói phục thuộc được cài đặt theo 
+
+
 # Một số câu lệnh trong việc cài đặt các gói 
 |              RPM               |              Ubuntu              |                   Hoạt động của lệnh                |
 |--------------------------------|----------------------------------|-----------------------------------------------------|
