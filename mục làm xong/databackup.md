@@ -1,4 +1,4 @@
-# Data Backup
+ggh# Data Backup
 
 # 1. Lệnh Rsync 
 - Là một công cụ dùng để sao chép và đồng bộ file/ thư mục được dùng rất phổ biết. 
