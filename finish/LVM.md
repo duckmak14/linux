@@ -68,7 +68,7 @@ d) Quản lý phân vùng trong linux
             - chọn số phân vùng mặc định ở đây là 2 bạn có thể chọn từ 2 tới 4
             - Cuối cùng, xác định sector cuối của phân vùng. Ấn Enter để chấp nhật sử dụng hết phần ổ đĩa còn trống. Thay vì chỉ định sector, bạn có thể chỉ định kích thước, chữ viết tắt tương ứng: K – Kilobyte, M – Megabyte và G – Gigabyte. Ví dụ, gõ “+5G” cho phân vùng với kích thước 5 Gigabyte. Nếu bạn không gõ đơn vị sau dấu “+”, fdisk sẽ lựa chọn sector làm đơn vị. Ví dụ, nếu bạn gõ “+10000”, fdisk sẽ cộng thêm 10000 sector để làm điểm kết thúc của phân vùng.
             - chọn loại phân vùng 
-            ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2009-32-29.png) 
+            ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2008-47-11.png) 
             - chọn `q` để lưu và thoát
             - `d`: xóa
             - `e`: để thêm một phân vùng extended
