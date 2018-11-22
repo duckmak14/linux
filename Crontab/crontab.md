@@ -10,7 +10,7 @@ b) Cách thức hoạt động
     - crontab -r: sóa file crontab 
 c) Cấu trúc của crontab
 - Một crontab file có 5 trường xác định thời gian và có cấu trúc như sau: 
-*thiếu ảnh* 
+![](https://github.com/duckmak14/linux/blob/master/Crontab/Screenshot%20from%202018-11-22%2013-47-12.png)
 - nhìn ảnh thì ta thấy 5 dấu sao đầu tiên sẽ là đại lượng thời gian 
 - từ trái qua phải theo thứ tự sẽ là: phút, giờ, ngày, tháng và tuần
 - Một số ví dụ minh họa về cách hiểu của các dấu sao 
@@ -20,10 +20,11 @@ c) Cấu trúc của crontab
     - 30 * * * *: 30 phút một lần 
 d) Cài đặt crontab 
 - Khi dùng centos thì crontab sẽ không có sẵn nên ta sẽ cài bằng lệnh `yum install cronie`
+![](https://github.com/duckmak14/linux/blob/master/Crontab/Screenshot%20from%202018-11-22%2014-30-20.png)
 - Sau đó khởi động nó và để nó tự động chạy mõi khi reboot bằng cách sử dụng các lệnh sau:
 service crond start
 chkconfig crond on
 # 2 Thực hành 
-- Ta sẽ làm một ví dụ  
-
+- Ta sẽ làm một ví dụ là sao chép file .bashrc vào /sbin lúc 6h mỗi ngày
+![](https://github.com/duckmak14/linux/blob/master/Crontab/Screenshot%20from%202018-11-22%2015-00-06.png)
 
