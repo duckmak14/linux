@@ -7,3 +7,6 @@
     - Striped: sẽ chia đều các dữ liệu ra và ghi vào các phân vùng đã có. Và cách chia dữ liệu ra bao nhiêu thì được định sẵn bởi người cài đặt nó
 # 2. Cách cài đặt 
 a) Linear
+- Để cài đặt được `linear logical volume` trước tiên ta phải có `group volume` mà nó chưa cấp cho `logical volume` nào cả. 
+- Sau đó ta dùng lệnh `lvcreate --extenes (số %)FREE --name (tên logical)
+- ![](https://github.com/duckmak14/linux/blob/master/linear_striped/Screenshot%20from%202018-11-26%2010-11-48.png)
