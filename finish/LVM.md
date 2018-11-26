@@ -1,16 +1,18 @@
 # 1.Khái niệm 
 a) LVM
--LVM: là phươn pháp ấn định không gian đĩa cứng thành những logical volume khiến cho việc thay đổi kích thước trở lên dễ  dàng hơn. Khi dùng LVM giúp ta có thể thay đổi khích thước mà không cần phải sửa table của OS.
+-LVM: là phươn pháp ấn định không gian đĩa cứng thành những logical volume khiến cho việc thay đổi kích thước trở lên dễ hơn. Khi dùng LVM giúp ta có thể thay đổi khích thước mà không cần phải sửa table của OS.
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-17%2020-32-44.png)
 - Physical volume: là một đĩa cứng vật lý hoặc là partition 
 - Volume group: là một nhóm các physical volume ( ổ đĩa ảo )
 - logical volume: là các phân vùng ảo của ổ đĩa ảo 
+
 b) Những thành phần của LVM
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2009-06-00%20(copy).png)
 - Ổ cứng (HDD): là thiết bị lưu trữ của máy tính. Nó là loại bộ nhớ không thay đổi và không bị mất dữ liệu khi ta ngừng cung cấp nguồn điện cho chúng 
 - Partition: là các phân vùng của ổ cứng. Mỗi một ổ cứng có 4 partition. Trong đó bao gồm 2 loại là primary partition và extended partition 
     - primary partition: còn được gọi là phân vùng chính, có thể khởi động và mỗi ổ cứng chỉ có tối đa 4 phân vùng này 
     - extended partition: Hay còn được gọi là phân vùng mở rộng của ổ cứng
+
 c) Vậy phân vùng có tác dụng gì? tại  sao phải phân vùng ổ cứng? 
 - Sự phân chia ổ cứng có thể định dạng các loại tệp tin khác nhau để có thể cài đặt được nhiều hệ điều hành đồng thời trên cùng một ổ cứng.
 - Phân chia ổ cứng không phải là một sự bắt buộc đối với một đĩa cứng 
@@ -24,6 +26,7 @@ c) Vậy phân vùng có tác dụng gì? tại  sao phải phân vùng ổ cứ
     - Ext: là định dạng file system đầu tiên được thiết kế dành cho linux có tất cả gồm 4 phiên bản từ Ext1 đến Ext4. Hiện nay đa phần người dùng Ext4 vì nó có thể giảm bớt  hiện tượng phân mảnh dữ liệu trong ổ cứng, hỗ trợ các file và phân vùng có dung lượng lớn...
     - XFS: Nó khá giống với Ext4 về mốt số mặt. như hạn chế phân vùng dữ liệu, không cho phép các snapshot tự động kết hơp với nhau, hỗ trợ nhiều file dung lượng lớn...
     - JFS: Điểm mạnh của JFS là tiêu tốn tài nguyên hệ thống và đạt hiệu suất hoạt động tốt hơn, tốc độ kiểm tra ổ đĩa nhanh hơn so với các phiên bản Ext 
+
 d) Quản lý phân vùng trong linux
 - Qui tắc đặt tên đĩa
     - IDE hard disks:
@@ -96,17 +99,21 @@ d) Quản lý phân vùng trong linux
 ### Lưu ý: Để thực hiện kỹ thuật này máy của ta cần có nhiều hơn 1 ổ cứng. Chúng ta có thể hình dung nếu máy của ta chỉ có 1 ổ cứng thì nó tương đương với `Group Volume` và các partition thương đương như là `logical volum`
 a) Tạo partition 
 - Tạo ra các partition như phân chia ổ cứng đã nói ở trên 
+
 b) Tạo ra Physical volume 
 - Sử dụng lệnh `pvcreate` 
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2009-24-31.png)
+
 c) Tạo Group volume 
 - Sử dụng lệnh `vgcreate` 
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2009-26-35.png)
+
 d) Tạo logical volume
 - Sử dụng lệnh `lvcreate -L size_volume -n (ten logical) (tên group volume)`
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2009-28-53.png)
 
 e) Định dạng logical 
+
 f) Rồi ta mount lại và sử dụng nó 
 # 4. Thay đổi dung lượng 
 a) Logical volume 
@@ -122,6 +129,7 @@ a) Logical volume
     - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2012-44-12.png)
     - Cập nhật thay đổi ta dùng lệnh `resize2fs`
     - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2012-47-49.png)
+
 b) Volume group 
 - Trước tiên cần kiểm tra lại partition và Volume group
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2012-49-33.png)
@@ -132,9 +140,11 @@ b) Volume group
 a) logical volume 
 - Trước tiên phải `umount` logical volume Sau đó tiến hành xóa logical volume bằng câu lệnh `lvremove`
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2012-55-58.png)
+
 b) volume group 
 - Trước khi xóa Volume Group ta phải xóa tất cả các Logical Volume trong group đó Để xóa Volume Group ta dùng lệnh `vgremove`
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2012-57-23.png)
+
 c) physical volume 
 - Cuối cùng là xóa Physical Volume Dùng lệnh pvremove
 - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2012-58-09.png)
