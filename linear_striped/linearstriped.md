@@ -5,6 +5,9 @@
 - giả sử ta phải ghi vào một dữ liệu vào các ổ cứng thì cách ghi dữ liệu của hai kiểu sẽ như trên hình
     - Linear: sẽ lưu dữ liệu vào từng phân vùng hết phân vùng này đến phân vùng khác 
     - Striped: sẽ chia đều các dữ liệu ra và ghi vào các phân vùng đã có. Và cách chia dữ liệu ra bao nhiêu thì được định sẵn bởi người cài đặt nó
+    - Ví dụ: ta có 8 ổ SSD như trên và được ký hiệu từ b cho đến i. và mỗi ổ SSD có 800GB lưu trữ. Bây giờ nếu phải lưu dữ liệu có dung lượng 1000GB thì cách ghi và lưu trữ của hai cái sẽ như sau 
+        -  Linear: nó sẽ ghi hết 800GB vào ổ SSD `b` và 200GB còn lại nó sẽ được ghi vào ổ SSD `c` 
+        - Striped: Đầu tiên nó đã được cài mỗi một lần lưu là mốt số lượng lưu trữ nhất định. giả sử ở đây mỗi một lần lưu trữ nó sẽ lưu 1GB thì đầu tiên nó sẽ lưu 1GB vào ổ `b` tiếp đó là 1GB vào ổ `c` cứ lần lượt đến ổ `i` rồi lại quay lại đến khi nào hết dữ liệu cần ghi thì thôi. 
 # 2. Cách cài đặt 
 ## a) Linear
 - Để cài đặt được `linear logical volume` trước tiên ta phải có `group volume` mà nó chưa cấp cho `logical volume` nào cả. 
@@ -16,6 +19,7 @@
 - ![](https://github.com/duckmak14/linux/blob/master/linear_striped/Screenshot%20from%202018-11-26%2010-50-12.png)
 - bây giờ ta đã có thể dùng được và để check lại các kiểu ta dùng lệnh `lvs --segment`
 - ![](https://github.com/duckmak14/linux/blob/master/linear_striped/Screenshot%20from%202018-11-26%2011-19-54.png)
+- Để có thể kiểm tra lại thì đầu tiên ta phải cài đặt được một gói đó là `bwn-ng`
 
 ## b) LVM Stripe
 - Cũng như linear để tạo được một striped thì ta cũng phải có volume group và dung lượng nó trống
