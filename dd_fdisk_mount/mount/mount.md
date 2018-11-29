@@ -32,6 +32,11 @@
 - Khi mout thủ công thì ta sử dụng câu lệnh. Nhưng khi mout thủ công thì mỗi lần reboot máy sẽ đọc file `/etc/fstab`
 sẽ không thấy có phần mount tự động do đó ta phải mount lại một lần nữa để có thể sử dụng được thiết bị lưu trữ
 - Cấu trúc câu lệnh: `mount -t (định dạng file ) (đường dẫn) ( nơi mount )
+- ![](https://github.com/duckmak14/linux/blob/master/dd_fdisk_mount/mount/Screenshot%20from%202018-11-29%2016-36-59.png)
 - Các định dạng hỗ trợ như: ext2, ext3, ext4, swap, FAT32, NTFS, auto... Nếu file được định dạng từ trước thì có thể bỏ qua option định dạng file này 
+- Ta định dạng file 
+- ![](https://github.com/duckmak14/linux/blob/master/dd_fdisk_mount/mount/Screenshot%20from%202018-11-29%2016-35-47.png)
 - Đường dẫn chính là đường dẫn đến thiết bị mà ta muốn mount
 - Nơi mount là nơi mà ta gắn nó vào để kết nối tới thư mục (/)
+- Kiểm tra lại 
+- ![](https://github.com/duckmak14/linux/blob/master/dd_fdisk_mount/mount/Screenshot%20from%202018-11-29%2016-37-05.png)
