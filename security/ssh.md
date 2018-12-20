@@ -57,6 +57,7 @@ ssh user@IP
         - Cách này đảm bảo có thể vào ssh 
 ### lưu ý: 
 - SSH key sẽ không thể hoạt động nếu ta bật selinux sửa lại ở trong file `/etc/selinux/config` sử xong rồi reboot lại server 
+- ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-20%2013-58-05.png)
 - Để bật xác thực kết nôi SSH bằng key ta cần cấu hình một vài thông số trong file `/etc/ssh/sshd_config`. sử xong cần reboot lại mới có thể thay đổi được thông số 
 ```
 service sshd restart
@@ -65,13 +66,16 @@ service sshd restart
 - ta cần chỉnh sửa 2 thông số
     - Pubkeyauthentication yes 
     - AuthorizedkeysFile .ssh/authorized_keys
-![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-13-29.png)
-
-- Để đăng nhập không cần pass thì ta cần sử dòng sau 
+    - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-13-29.png)
+    - Sau khi sửa xong máy client sẽ đăng nhập mà không cần nhập pass
+    - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-20%2014-12-03.png)
+- Chỉ các máy nào có key thì mới được đăng nhập ta cần sửa dòng sau 
     - PasswordAuthentication no 
-![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-20-35.png)
+    - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-20-35.png)
 - Nếu muốn cấp quyền không cho đăng nhập vào tài khoản root thì ta có thể sử dòng sau 
     - PermitRootLogin no
-![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-19-53.png)
+    - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-19-53.png)
+    - Kết quả sau khi sử nó sẽ không cho quyền đăng nhập 
+    - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-20%2014-15-45.png)
 - Cũng như tài khoản root  ta có thể giới hạn được các tài khoản được phép sử dụng ssh bằng cách thêm những user vào sau  `AllowUsers`  có thể được dùng SSH để login vào
 
