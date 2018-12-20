@@ -30,6 +30,7 @@ ssh user@IP
     ```
     ssh -keygen
     ```
+    - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2006-44-30.png)
     - Dòng thứ 2 nó hỏi tạo ra thư mục để lưu key 
     - dòng thứ 4 thì nó hỏi có tạo mật khẩu để bảo vệ thư  mục key không ( ở đây để mặc định là không)
     - Các dòng tiếp theo là thông báo hoàn thành 
@@ -41,15 +42,18 @@ ssh user@IP
 - `-f` : để chọn vị trí lưu file key 
 - `-y` để tạo ra `public key` từ một `private key`. Ta có thể kiểm tra bằng cách vào thư mục `.ssh` 
     - Trong thư mục ssh ta thấ y có 2 file. Thì 1 file là để chứa `private key` còn một file để chứa `public key` 
+    - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2006-44-43.png)
     - Ta cần đưa `public key` lên server ta muốn kết nối ssh.
         - Tạo thư mục `.ssh` 
         - Cấp quyề n cho thư mục 
         - Tạo file `authorized_key` vào và cấp quyền cho file đó
         - Copy nội dung file `id_rsa.pub` Vào file `authorized_key` vừa tạo 
+        - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-08-15.png)
         - Hoặc ta có thể dùng lệnh 
         ```
         [root@localhost .ssh]# ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.54.128
         ```
+        - ![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-05-39.png)
         - Cách này đảm bảo có thể vào ssh 
 ### lưu ý: 
 - SSH key sẽ không thể hoạt động nếu ta bật selinux sửa lại ở trong file `/etc/selinux/config` sử xong rồi reboot lại server 
@@ -61,9 +65,13 @@ service sshd restart
 - ta cần chỉnh sửa 2 thông số
     - Pubkeyauthentication yes 
     - AuthorizedkeysFile .ssh/authorized_keys
+![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-13-29.png)
+
 - Để đăng nhập không cần pass thì ta cần sử dòng sau 
     - PasswordAuthentication no 
+![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-20-35.png)
 - Nếu muốn cấp quyền không cho đăng nhập vào tài khoản root thì ta có thể sử dòng sau 
     - PermitRootLogin no
+![](https://github.com/duckmak14/linux/blob/master/security/Screenshot%20from%202018-12-19%2008-19-53.png)
 - Cũng như tài khoản root  ta có thể giới hạn được các tài khoản được phép sử dụng ssh bằng cách thêm những user vào sau  `AllowUsers`  có thể được dùng SSH để login vào
 
