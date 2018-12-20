@@ -113,7 +113,9 @@ anhducanhanhducanhduc
 ```
 ### c) Xóa các dòng trống 
 - Đọc file khi chưa sử dụng sed để kiểm tra các dòng trống 
+- ![](https://github.com/duckmak14/linux/blob/master/text_commands/Screenshot%20from%202018-12-20%2015-29-53.png)
 - Thực hiện lệnh sed
+![](https://github.com/duckmak14/linux/blob/master/text_commands/Screenshot%20from%202018-12-20%2015-29-33.png)
 ### d)Kết hợp nhiều chuỗi lệnh sed 
 ```
 anhduc@anhduc:~$ echo abc | sed 's/a/A/' | sed 's/b/B/'
@@ -128,6 +130,7 @@ ABc
 sed 's/[^.]*(ký tự )[^.]*//g' duc.txt
 ```
 - ví dụ dưới đây là xóa dòng có ký tự `a`
+- ![](https://github.com/duckmak14/linux/blob/master/text_commands/Screenshot%20from%202018-12-20%2015-36-38.png)
 # 5. Grep 
 - Lệnh `grep` : là lệnh được dùng để tìm kiếm 1 chuỗi ký tự ở trong file chỉ định 
 ### a) Tìm kiếm chuỗi trong file 
@@ -137,10 +140,13 @@ a
 ```
 ### b) Tìm nhiều chuỗi 
 - ví dụ là tìm tất cả các chuỗi có ký  tự a ở trong file có đuôi `txt`
+- ![](https://github.com/duckmak14/linux/blob/master/text_commands/Screenshot%20from%202018-12-20%2015-48-07.png)
 ### c) Tìm kiếm không phân biệt chữ hoa thường 
 - Ta dùng option `-i`. Ví dụ tìm chuỗi có chưa ký tự `a`
+- ![](https://github.com/duckmak14/linux/blob/master/text_commands/Screenshot%20from%202018-12-20%2015-50-27.png)
 ### d) Tìm kiếm chính xác với dòng chứa tất cả ký tự đó 
 - Ta dùng option `-w`. Ví dụ tìm với chuỗi ký tự `a`
+- ![](https://github.com/duckmak14/linux/blob/master/text_commands/Screenshot%20from%202018-12-20%2015-52-56.png)
 ### e) Hiện thị thêm những dòng xung quanh 
 - Ta có các option là 
     - `-A` : là sau 
@@ -151,4 +157,5 @@ a
 grep -(A,B,C) (số dòng) "chuỗi" (tên file)
 ```
 - ví dụ: 3 dòng trước ký tự a với tìm chính xác 
+- ![](https://github.com/duckmak14/linux/blob/master/text_commands/Screenshot%20from%202018-12-20%2015-59-08.png)
 ###
