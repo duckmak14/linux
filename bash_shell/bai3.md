@@ -1,3 +1,4 @@
+Đề bài: 
 #!/bin/sh
 
 sshpass -f file  ssh-copy-id -i .ssh/id_rsa.pub  root@192.168.54.134
