@@ -6,14 +6,23 @@
     - user: root    
 #!/bin/sh
 cat file ( đọc file lưu địa chỉ ip và pass)
+
 echo "nhap ip cua server 1:"
+
 read ip1 # 
+
 echo "nhap ip cua server 2:"
+
 read ip2 # 
+
 grep "anhduc" file > pass_file
+
 echo " user dang nhap" 
+
 read user # 
+
 sshpass ssh-copy-id -i /root/.ssh/id_rsa.pub $user@$ip1 (truyền key bằng lệnh)
+
 sshpass ssh-copy-id -i /root/.ssh/id_rsa.pub $user@$ip2
 
 # Note: có bao nhiêu địa chỉ ip thì làm tương tự chỉ thêm ip
