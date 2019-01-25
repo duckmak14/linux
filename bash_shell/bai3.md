@@ -5,6 +5,7 @@
     - ip2: 192.168.54.135
     - user: root    
 #!/bin/sh
+
 cat file ( đọc file lưu địa chỉ ip và pass)
 
 echo "nhap ip cua server 1:"
