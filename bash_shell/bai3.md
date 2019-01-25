@@ -22,8 +22,8 @@ echo " user dang nhap"
 
 read user # 
 
-sshpass ssh-copy-id -i /root/.ssh/id_rsa.pub $user@$ip1 (truyền key bằng lệnh)
+sshpass -f pass_file ssh-copy-id -i .ssh/id_rsa.pub $user@$ip1 (truyền key bằng lệnh)
 
-sshpass ssh-copy-id -i /root/.ssh/id_rsa.pub $user@$ip2
+sshpass -f pass_file ssh-copy-id -i .ssh/id_rsa.pub $user@$ip2
 
 # Note: có bao nhiêu địa chỉ ip thì làm tương tự chỉ thêm ip
