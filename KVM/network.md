@@ -1,7 +1,7 @@
 - Cũng giống như các công cụ ảo hóa khác thì KVM cũng cung cấp các mô hình mạng trong việc ảo hóa network. Các mô hình mạng bao gồm 
     - NAT
     - Bridge
-    - Host-only
+    - Router network
 # 1. NAT
 ![]()
 - NAT networking thường được cung cấp và kích hoạt theo mặc định bởi hầu hết các bản phân phối linux chính hỗ trợ ảo hóa KVM
@@ -10,3 +10,10 @@
 - Chế độ này coi Libvirt server như một router 
 - Đây sẽ là chế độ mặc định khi mới cái libvirt mà không cần cấu hình gì 
 ### Cách cấu hình mạng NAT 
+- Khi cài KVM thì ta sẽ được cung cấp một mạng ảo NAT là `default` 
+- Mạng này thường mang dỉa địa chỉ IP 192.168.122.X Nếu không dùng mạng ảo `default thì ta có thể tạo ra một mô hình NAT khác có một vài cách để thực hiện nó. 
+- Sử dung công cụ `Virtual Machine Manager`
+    - Vào edit chọn connection details
+    - 
+# 2. Bridged 
+- 
