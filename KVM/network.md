@@ -3,7 +3,7 @@
     - Bridge
     - Host-only
 # 1. NAT
-![]()
+![](https://github.com/duckmak14/linux/blob/master/KVM/network/networknat.png)
 - NAT networking thường được cung cấp và kích hoạt theo mặc định bởi hầu hết các bản phân phối linux chính hỗ trợ ảo hóa KVM
 - Mặc định một switch mạng ảo vận hành trong chế độ NAT mode sử dụng IP ảo. Điều này dẫn đến bất kì máu ảo nào được kết nối tới nó sử dụng địa chỉ IP của máy host để liên lạc ra bên ngoài và các máy bên ngoài không thể liên lạc được máy guest ở trong khi mà swtich họat động ở chế độ `NAT`
 - Nó cho phép hệ điều hành khách có thể kết nối ra ngoài được mà không cần yêu cầu cấu hình cụ thể 
@@ -36,7 +36,17 @@
 - Phải đủ IPv4 để cho các máy ảo 
 ## Cách cấu hình tạo mạng bridged network 
 - Cài bằng virt-manager 
+- Ta chỉ cần vào và thay đổi card mạng như hình dưới đây 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/network/Screenshot%20from%202019-03-01%2008-19-30.png)
+- Ta kiểm tra ip máy guest
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/network/Screenshot%20from%202019-03-01%2008-22-45.png)
+- Sau đó ta kiểm tra lại card mạng ở máy ta có thêm 1 card mạng cũng địa chỉ 192.168.2.x
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/network/Screenshot%20from%202019-03-01%2008-23-38.png)
 # 3. Host-only
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/networkisolated.png)
 - Trong kiểu này thì sẽ cấp phát địa chỉ tùy ý giống với mô hình NAT. 
 - Virtual swtich sẽ thấy được IP trong mỗi gói tin và sử dụng thông tin đó để quyết định sẽ làm gì với gói tin đó 
+## cách cấu hình 
+- Ta làm các bước giống như cấu hình kiểu mạng NAT nhưng đến bước cuối có khác 1 điểm là ta sẽ chọn `Isolated`
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/network/Screenshot%20from%202019-03-01%2009-12-02.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/network/Screenshot%20from%202019-03-01%2009-12-13.png)
