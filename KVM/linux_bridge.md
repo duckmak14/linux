@@ -11,4 +11,5 @@
     - STP: là tính năng chống loop gói tin trong switch 
     - Tính năng tạo ra các vlan 
     - FDB: Là tính năng chuyển gói tin theo data-base để tăng tốc cho switch
-    - 
+# Tạo và quản lý linux-bridge
+-  Để tạo một linux bridge ta dùng lệnh ` brctl addbr tên_switch` 
