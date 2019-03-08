@@ -55,4 +55,3 @@ ta chọn cái đầu tiên có nghĩa là boot bằng file iso trong hệ thố
 - Cuối cùng là lựa chọn tên máy ảo và network 
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2013-52-24.png)
 - Sau khi tạo xong máy ta có thể kiểm tra lại mọi thứ ở dấu chấm than bên cạnh
-- ![]()
