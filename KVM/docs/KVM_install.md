@@ -2,7 +2,13 @@
 - KVM(Kernel-based Virtual Machine): là công nghệ ảo hóa trong nhân linux cho phép hạt nhân hoạt động như một trình ảo hóa. Do đó máy chủ KVM giống như xen được cung cấp riêng tài nguyên để sử dụng tránh việc tranh chấp tài nguyên với máy chủ khác.
 - Máy chủ gốc được cài hệ điều hành linux nhưng KVM hỗ trợ tạo máy chủ ảo có thể chạy cả Linux, Windows. Nó cũng hỗ trợ cả X86 và X86-64 system
 -  KVM cung cấp ảo hóa hỗ trợ phần cứng cho nhiều hệ điều hành khách khác nhau. 
-# 2. Hướng dẫn cài đặt KVM 
+# 2.Cấu trúc của KVM 
+- ![]()
+- User-facing tools: Là các công cụ quản lý máy ảo hỗ trợ KVM. Các công cụ có giao diện đồ họa (như virt-manager) hoặc giao diện dòng lệnh như (virsh)
+- Management layer: Lớp này là thư viện libvirt cung cấp API để các công cụ quản lý máy ảo hoặc các hypervisor tương tác với KVM thực hiện các thao tác quản lý tài nguyên ảo hóa, vì tự thân KVM không hề có khả năng giả lập và quản lý tài nguyên như vậy.
+- Virtual machine: Chính là các máy ảo người dùng tạo ra. Thông thường, nếu không sử dụng các công cụ như virsh hay virt-manager, KVM sẽ sử được sử dụng phối hợp với một hypervisor khác điển hình là QEMU.
+- Kernel support: Chính là KVM, cung cấp một module làm hạt nhân cho hạ tầng ảo hóa (kvm.ko) và một module kernel đặc biệt hỗ trợ các vi xử lý VT-x hoặc AMD-V (kvm-intel.ko hoặc kvm-amd.ko)
+# 3. Hướng dẫn cài đặt KVM 
 - KVM chỉ làm việc nếu CPU hỗ trợ ảo hóa phần cứng Intel VT-x hoặc AMD-V. Để xác định CPU có những tính năng này hay không, Thực hiện lệnh sau
 ```
 egrep -c '(svm|vmx)' /proc/cpuinfo
