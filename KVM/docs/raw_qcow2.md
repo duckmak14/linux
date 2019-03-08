@@ -8,7 +8,7 @@
 # 3. Ta Kiểm tra tốc độ đọc file của 2 file 
 - Để kiểm tra tốc độ đọc thì ta sử dụng lệnh `dd`
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-03-06%2009-51-34.png)
-- Ta sẽ thấy rằng định dạng qcow2 sẽ thấy tốc độ đọc ghi tốt hơn 
+- Ta sẽ thấy rằng định dạng raw sẽ thấy tốc độ đọc ghi tốt hơn 
 # 4. Tạo snapshot
 Khi tạo bản snapshot thì chỉ dùng định dạng qcow2 là hỗ trợ cho bản snapshot khi ta tạo bản đó nó sẽ mặc định tạo theo định dạng qcow2
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-03-06%2010-09-18.png)
