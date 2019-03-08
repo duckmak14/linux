@@ -12,14 +12,14 @@ egrep -c '(svm|vmx)' /proc/cpuinfo
 kvm-ok
 ```
 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2014-20-29.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2014-20-29.png)
 - Sau khi biết được có hỗ trợ ảo hóa thì ta sử dụng gói đi kèm và sử dụng lệnh. 
 ```
 sudo apt-get install qemu-kvm libvirt-bin bridge-utils 
 ```
 # 3. Tạo và quản lý máy ảo bằng lệnh
 ## a) Bằng lệnh virt-install 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2013-45-05.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2013-45-05.png)
 ```
 - $ virt-install \
 > --name=Centos7-may4 \
@@ -42,17 +42,17 @@ Trong đó
 - `--network` chỉ ra cách kết nối mạng của máy ảo. Trên đây là một số option cơ bản để tạo máy ảo. Bạn có thể tìm hiểu thêm bằng cách sử dụng lệnh virt-install --help
 ## b) Bằng virt-manager
 - Sau khi cài xong virt-manager ta sử dụng ứng dụng như sau 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2014-21-50.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2014-21-50.png)
 - Ta chọn file -> creat a new virtual manager 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-20%2022-22-35.png) 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-20%2022-22-35.png) 
 ta chọn cái đầu tiên có nghĩa là boot bằng file iso trong hệ thống 
 - Sau khi ta foward thì đến mục chọn file iso trong máy chúng ta
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2013-52-00.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2013-52-00.png)
 - Tiếp theo là chọn số CPU và memory cần thiết 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2013-52-10.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2013-52-10.png)
 - Tiếp đến là lựa chọn số GB để lưu trữ máy ảo 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2013-52-15.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2013-52-15.png)
 - Cuối cùng là lựa chọn tên máy ảo và network 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2013-52-24.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/KVM_install/Screenshot%20from%202019-02-21%2013-52-24.png)
 - Sau khi tạo xong máy ta có thể kiểm tra lại mọi thứ ở dấu chấm than bên cạnh
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-21%2014-32-14.png)
+- ![]()

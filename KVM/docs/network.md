@@ -29,10 +29,9 @@
     - Rồi ta chọn áp dụng cho VM của ta vừa tạo
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-02-27%2011-16-34.png)
     - Sau đó ta áp dụng vào máy ảo rồi kiểm tra lại địa chỉ ip để xem có đúng như ta đã thay đổi không 
-    - ![](https://github.com/duckmak14/linux/blob/master/KVM/network/Screenshot%20from%202019-02-27%2011-06-04.png)
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-28%2007-18-38.png)
 # 2. Bridged 
-- ![](images/network/networkbridge.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/networkbridge.png)
 - Mạng Bridged network chia sẻ một thiết bị Ethernet thật với các máy ảo VM. Mỗi VM có thể gán trực tiếp bất kì địa chỉ IP trên mạng LAN, như một máy tính vật lý. Bridging cho phép hiệu năng cao nhất và là kiểu mạng ít gây vấn đề nhất trong Libvirt
 - Sử dụng mạng bridged thì host phải được kết nối trực tiếp với ethernet chứ không phải kết nối tới mạng không đây
 - Phải đủ IPv4 để cho các máy ảo 
@@ -45,7 +44,7 @@
 - Sau đó ta kiểm tra lại card mạng ở máy ta có thêm 1 card mạng cũng địa chỉ 192.168.2.x
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-01%2008-23-38.png)
 # 3. Host-only
-- ![](imges/network/networkisolated.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/networkisolated.png)
 - Trong kiểu này thì sẽ cấp phát địa chỉ tùy ý giống với mô hình NAT. 
 - Virtual swtich sẽ thấy được IP trong mỗi gói tin và sử dụng thông tin đó để quyết định sẽ làm gì với gói tin đó 
 ## cách cấu hình 

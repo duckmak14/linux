@@ -9,3 +9,4 @@
 7. [Cơ chế lưu trữ Thin và Thick](docs/thin_thick.md)
 8. [Tìm hiểu file xml](docs/.md)
 9. [Tìm hiểu cơ chế snapshot](docs/snapshot.md)
+10. [Tìm hiểu cấu trúc CPUx86](docs/CPUx86.md)
