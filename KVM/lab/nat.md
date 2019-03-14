@@ -1,0 +1,1 @@
+- Như bài trước ta đã biết một kiểu mạng NAT sẽ được mặc định cài đặt khi tạo ra một VM. bài trước đã cài một máy và có card mạng là `default`. 
