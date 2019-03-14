@@ -9,8 +9,18 @@
     - 2: là dải mạng của host ban đầu đề kết nối tới internet
 - Sau đó ta sử dụng lệnh `tcpdump` để có thể bắt được gói tin và đường đi của nó 
 - Đầu tiên để có thể bắt được gói tin ta cần phải sử dụng lệnh ping từ máy ảo ra bên ngoài và cho nó liên tục chạy 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_4.png)
 - Sau đó ta bắt gói tin từ 3 điểm trong mô hình của kiểu NAT 
 - Đầu tiên ta bắt gói tin ở bên VM (192.168.122.40)
+    - Ta bắt gói tin vào một file 
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_5.png)
+    - sau đó dùng lệnh scp để chia sẻ file đó với máy thật.
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_6.png)
+    - sau khi dùng scp
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_7.png)
+    - Sau đó ta dùng wireshark để có thể xem được đường đi của gói tin 
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_7.png)
 - Sau đó ta bắt gói tin ở virtual router (192.168.122.1)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_9.png)
 - Cuối cùng ta bắt gói tin ở card host (172.16.2.137)
 - Như vậy VM có thể biết được địa chỉ ở bên ngoài internet nhưng các máy ở bên ngoài sẽ không thể thấy được VM. Như vậy địa chỉ của KVM host sẽ đại diện cho các VM khi giao tiếp với bên ngoài. Để thấy rõ hơn tôi sẽ sử dụng lệnh iptables để thấy các rule được đặt để cho dải mạng được NAT đi ra ngoài.
