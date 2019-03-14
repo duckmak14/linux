@@ -23,4 +23,5 @@
 - Sau đó ta bắt gói tin ở virtual router (192.168.122.1)
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_9.png)
 - Cuối cùng ta bắt gói tin ở card host (172.16.2.137)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_10.png)
 - Như vậy VM có thể biết được địa chỉ ở bên ngoài internet nhưng các máy ở bên ngoài sẽ không thể thấy được VM. Như vậy địa chỉ của KVM host sẽ đại diện cho các VM khi giao tiếp với bên ngoài. Để thấy rõ hơn tôi sẽ sử dụng lệnh iptables để thấy các rule được đặt để cho dải mạng được NAT đi ra ngoài.
