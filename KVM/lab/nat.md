@@ -1,1 +1,16 @@
-- Như bài trước ta đã biết một kiểu mạng NAT sẽ được mặc định cài đặt khi tạo ra một VM. bài trước đã cài một máy và có card mạng là `default`. 
+- Để có thể kiểm tra được đường đi của kiểu mạng NAT này ta cần sử dụng đến ứng ụng wireshark để có thể biết được điểm đầu và điểm cuối của gói tin 
+- Như bài trước ta đã biết một kiểu mạng NAT sẽ được mặc định cài đặt khi tạo ra một VM. Và VM sẽ dùng nó để làm gateway để có thể kết nối tới mạng bên ngoài 
+- Bài trước đã cài một VM và có card mạng là `default`. và có địa chỉ mạng là `192.168.122.40`
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_3.png)
+- Mô hình trong kiểu mạng NAT
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_2.png)
+- Trong mô hình này bao gồm hai dải mạng được tạo ra khi sử dụng kiểu mạng NAT 
+    - 1: là dải mạng ảo của vm được tạo ra bởi libvirt(router ảo)
+    - 2: là dải mạng của host ban đầu đề kết nối tới internet
+- Sau đó ta sử dụng lệnh `tcpdump` để có thể bắt được gói tin và đường đi của nó 
+- Đầu tiên để có thể bắt được gói tin ta cần phải sử dụng lệnh ping từ máy ảo ra bên ngoài và cho nó liên tục chạy 
+- Sau đó ta bắt gói tin từ 3 điểm trong mô hình của kiểu NAT 
+- Đầu tiên ta bắt gói tin ở bên VM (192.168.122.40)
+- Sau đó ta bắt gói tin ở virtual router (192.168.122.1)
+- Cuối cùng ta bắt gói tin ở card host (172.16.2.137)
+- Như vậy VM có thể biết được địa chỉ ở bên ngoài internet nhưng các máy ở bên ngoài sẽ không thể thấy được VM. Như vậy địa chỉ của KVM host sẽ đại diện cho các VM khi giao tiếp với bên ngoài. Để thấy rõ hơn tôi sẽ sử dụng lệnh iptables để thấy các rule được đặt để cho dải mạng được NAT đi ra ngoài.
