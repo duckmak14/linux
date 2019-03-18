@@ -3,7 +3,7 @@
     - Bridge
     - Host-only
 # 1. NAT
-![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/networknat.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/networknat.png)
 - NAT networking thường được cung cấp và kích hoạt theo mặc định bởi hầu hết các bản phân phối linux chính hỗ trợ ảo hóa KVM
 - Mặc định một router mạng ảo vận hành trong chế độ NAT mode sử dụng IP ảo. Điều này dẫn đến bất kì máy ảo nào được kết nối tới nó sử dụng địa chỉ IP của máy host để liên lạc ra bên ngoài và các máy bên ngoài không thể liên lạc được máy guest ở trong khi mà swtich họat động ở chế độ `NAT`
 - Nó cho phép hệ điều hành khách có thể kết nối ra ngoài được mà không cần yêu cầu cấu hình cụ thể 
@@ -51,3 +51,4 @@
 - Ta làm các bước giống như cấu hình kiểu mạng NAT nhưng đến bước cuối có khác 1 điểm là ta sẽ chọn `Isolated`
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-01%2009-12-02.png)
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-01%2009-12-13.png)
+# 4. Phân biệt NAT à 
