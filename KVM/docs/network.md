@@ -30,6 +30,8 @@
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-02-27%2011-16-34.png)
     - Sau đó ta áp dụng vào máy ảo rồi kiểm tra lại địa chỉ ip để xem có đúng như ta đã thay đổi không 
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/Anh/Screenshot%20from%202019-02-28%2007-18-38.png)
+- Cấu trúc của NAT 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/screenshot_2.png)
 # 2. Bridged 
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/networkbridge.png)
 - Mạng Bridged network chia sẻ một thiết bị Ethernet thật với các máy ảo VM. Mỗi VM có thể gán trực tiếp bất kì địa chỉ IP trên mạng LAN, như một máy tính vật lý. Bridging cho phép hiệu năng cao nhất và là kiểu mạng ít gây vấn đề nhất trong Libvirt
@@ -43,6 +45,9 @@
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-01%2008-22-45.png)
 - Sau đó ta kiểm tra lại card mạng ở máy ta có thêm 1 card mạng cũng địa chỉ 192.168.2.x
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-01%2008-23-38.png)
+- Cấu trúc mạng bridge
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/2019-03-18_22-27.png)
+- 
 # 3. Host-only
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/networkisolated.png)
 - Trong kiểu này thì sẽ cấp phát địa chỉ tùy ý giống với mô hình NAT. 
@@ -51,4 +56,7 @@
 - Ta làm các bước giống như cấu hình kiểu mạng NAT nhưng đến bước cuối có khác 1 điểm là ta sẽ chọn `Isolated`
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-01%2009-12-02.png)
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-01%2009-12-13.png)
-# 4. Phân biệt NAT à 
+- Cấu trúc mạng 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/network/Screenshot%20from%202019-03-18%2022-14-27.png)
+- Kiểu mạng này khác so với NAT là kiểu mạng này tạo ra một  mạng cô lập và không thể đi được ra ngoài internet
+
