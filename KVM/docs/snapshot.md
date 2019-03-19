@@ -16,3 +16,14 @@
 # 4. Phân loại kiểu snapshot 
 - `Internal`: Các bản snapshot được tạo ra sẽ nằm bên trong file disk của máy ảo. Với cách này sẽ dễ dàng để tạo nhưng có trở ngại khi file disk của ta bị giới hạn.
 - `External`: Các bản snapshot được tạo ra sẽ nằm ở một file riêng biệt với file disk. Với loại này ta có thể lưu trạng thái disk của máy ảo ở một file và trạng thái về RAM của máy ảo ở một file khác. Với kiểu này ta có thể tránh được sự hết dung lượng disk của máy ảo khi tạo  snapshot.
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/snapshot/Screenshot%20from%202019-03-19%2017-15-33.png)
+- Để kiểm tra ta vào /var/lib/libvirt/images để có thể nhìn thấy file snapshot đã được tạo ra một file riêng 
+```
+root@anhduc:/var/lib/libvirt/images# ll
+total 2261868
+drwx--x--x 2 root         root        4096 Thg 3 19 16:37 ./
+drwxr-xr-x 7 root         root        4096 Thg 3 19 15:54 ../
+-rwxrwxrwx 1 libvirt-qemu kvm  11596398781 Thg 3 19 17:13 centos7.0-2.qcow2*
+-rw-r--r-- 1 root         root        4096 Thg 3 19 16:37 .centos7.0-2.qcow2.swp
+root@anhduc:/var/lib/libvirt/images# 
+```
