@@ -9,6 +9,10 @@
 - Khi xóa một bản snapshot có nghĩa là ta xóa đi một khối nào đó. Lúc này nó sẽ giữ lại những thông tin mà các bản snapshot tạo sau đang đọc từ nó và chỉ xóa đi những thông tin liên quan
 - Những thông tin liên quan sẽ được gộp chung với khối là bản snapshot được tạo ngay phía sau nó
 - ![](https://github.com/niemdinhtrong/NIEMDT/blob/master/KVM/images/virsh/3.png)
-# 3. Phân loại kiểu snapshot 
+# 3. Convert một bản snapshot 
+- Khi ta muốn sử dụng lại một bản snapshot trước đó mà ta đã lưu thì ta phải convert nó vào bản ban đầu và cơ chế của convert là:
+- ![](https://github.com/niemdinhtrong/NIEMDT/blob/master/KVM/images/snapshot/2.png)
+- Nó sẽ copy bản snapshot trước đó và ghi đè lên bản đang chạy hiện tại và sử dụng nó 
+# 4. Phân loại kiểu snapshot 
 - `Internal`: Các bản snapshot được tạo ra sẽ nằm bên trong file disk của máy ảo. Với cách này sẽ dễ dàng để tạo nhưng có trở ngại khi file disk của ta bị giới hạn.
 - `External`: Các bản snapshot được tạo ra sẽ nằm ở một file riêng biệt với file disk. Với loại này ta có thể lưu trạng thái disk của máy ảo ở một file và trạng thái về RAM của máy ảo ở một file khác. Với kiểu này ta có thể tránh được sự hết dung lượng disk của máy ảo khi tạo  snapshot.
