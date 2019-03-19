@@ -6,7 +6,7 @@
 5. [Lệnh history](https://github.com/duckmak14/linux/blob/master/finish/History_command.md)
 6. [Data backup](https://github.com/duckmak14/linux/blob/master/finish/databackup.md)
 7. [processes](https://github.com/duckmak14/linux/blob/master/finish/Processes.md)
-8 [gói ứng dụng](https://github.com/duckmak14/linux/blob/master/finish/Packagemanagement.md)
+8. [gói ứng dụng](https://github.com/duckmak14/linux/blob/master/finish/Packagemanagement.md)
 9. [LVM](https://github.com/duckmak14/linux/blob/master/finish/LVM.md)
 10. [LVM liear-striped](https://github.com/duckmak14/linux/blob/master/linear_striped/linearstriped.md)
 11. [Dịch vụ NFS](https://github.com/duckmak14/linux/blob/master/finish/nfs.md)
@@ -17,3 +17,4 @@
 16. [Fping](https://github.com/duckmak14/linux/blob/master/Fping_mtr/Fping.md)
 17. [Mtr](https://github.com/duckmak14/linux/blob/master/Fping_mtr/mtr.md)
 18. [crontab](https://github.com/duckmak14/linux/blob/master/Crontab/crontab.md)
+19. [Linux overview (10-24)](linux_overview.md)
