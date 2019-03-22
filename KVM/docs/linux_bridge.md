@@ -12,4 +12,67 @@
     - Tính năng tạo ra các vlan 
     - FDB: Là tính năng chuyển gói tin theo data-base để tăng tốc cho switch
 # Tạo và quản lý linux-bridge
+### Chuẩn bị 
+- Một máy VM có cài đặt KVM 
+- Cài đặt gói wget
+- Có file centos7.iso
+- Cài gói `tcpdump`
+- Cài đặt gói -X 
+
+### Các bước thực hiện 
+- Cài đặt gói tcpdump
+```
+yum install tcpdump 
+```
+- Cài gói -X
+```
+yum install "@X Window System" xorg-x11-xauth xorg-x11-fonts-* xorg-x11-utils -y
+```
+- Cài wget 
+```
+yum install wget 
+```
+- Cài file centos7 iso 
+```
+wget http://centos-hn.viettelidc.com.vn/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
+```
 -  Để tạo một linux bridge ta dùng lệnh ` brctl addbr tên_switch` 
+- Sau khi tạo xong ta cần add `bridge` vào card mạng để có thể sử dụng được ta dùng lệnh `brctl addif card`
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot.png)
+- Sau khi add thêm card mạng ta có sử dụng `brctl show` để kiểm tra xem đã add thành công chưa
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_1.png)
+- Để có thể sử dụng được kiểu mạng bridge ta cần phải chuyển địa chỉ ip của card mạng ban đầu để chuyển cho bridge thì mới có thể sử dụng được card bridge này  ta sử dụng `iconfig` 
+- Như ta thấy nếu không  add card mạng thì ta sẽ thấy card `ens9` sẽ có ip mà kiểu mạng bridge(br0) sẽ không có địa chỉ ip 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_5.png)
+- Nhưng ở trong centos chưa có sẵn lệnh này nên ta phải cài đặt khi chưa cài đặt ta sẽ thấy 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_2.png)
+- Ta cần sử dụng 2 lệnh sau 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_3.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_4.png)
+- sau khi cài đặt xong thì ta sử dụng lệnh để xóa ip của card `ens9`
+```
+ifconfig Tên_card(ens9) 0
+```
+
+- Sau đó xin cấp địa chỉ ip đó cho `br0` 
+```
+dhclient tên_bridge(br0)
+```
+
+- Sau khi ta chuyển xong card mạng thì ta sẽ thấy được rằng ip ở card ens9 đã mất 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_6.png)
+- Rôi ta sử dụng card mạng này để tạo máy ảo. Ta phải chỉ ra đúng tên card mạng 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_7.png)\
+- Ta kiểm tra ip xem có giống với card mạng bridge ta tạo ra không 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_8.png)
+- Địa chỉ bridge(br0)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_9.png)
+- Ta kiểm tra đường đi của máy xem có đi đúng đường không ta đi kiểm tra 3 điểm: 
+    - card ens9 của host KVM 
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_10.png)
+    - card vm0(tap)
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_12.png)
+    - card eth0 của VM 
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/Untitled%20Diagram.png)
+- Như vậy ta sẽ thấy mô hình đường đi của kiểu mạng linux_bridge là như sau 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/Untitled%20Diagram.png)
