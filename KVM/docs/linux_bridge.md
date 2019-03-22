@@ -74,5 +74,6 @@ dhclient tên_bridge(br0)
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_12.png)
     - card eth0 của VM 
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_13.png)
+- Như vậy ta thấy rằng card eth0 của VM đã được gắn thằng với switch được tạo ra bởi kiểu mạng `bridge` của host KVM tạo ra nên ta mới thấy rằng đường đi với nó có địa chỉ đầu và cuối giống nhau dù ta có bắt gói tin ở 3 điểm khác nhau.
 - Như vậy ta sẽ thấy mô hình đường đi của kiểu mạng linux_bridge là như sau 
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/Untitled%20Diagram.png)
