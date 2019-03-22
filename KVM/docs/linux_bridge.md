@@ -73,6 +73,6 @@ dhclient tên_bridge(br0)
     - card vm0(tap)
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_12.png)
     - card eth0 của VM 
-    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/Untitled%20Diagram.png)
+    - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_13.png)
 - Như vậy ta sẽ thấy mô hình đường đi của kiểu mạng linux_bridge là như sau 
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/Untitled%20Diagram.png)
