@@ -20,4 +20,7 @@
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/XML_lab/screenshot_4.png)
 - Rồi ta kiểm tra xem có sự thay đổi thông tin của máy bằng ứng dụng virt-manager
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/XML_lab/screenshot_5.png)
+# Add card mạng bằng file xml 
 ### Vậy ta có thể thấy được rằng khi thay đổi card mạng bằng file XML thì kiểu mạng của VM cũng sẽ bị thay dổi theo 
+# Link tham khảo 
+- ![](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-editing_a_guest_virtual_machines_configuration_file-adding_multifunction_pci_devices_to_kvm_guest_virtual_machines)
