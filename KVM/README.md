@@ -7,7 +7,7 @@
 5. [Công nghệ Linux_bridge](docs/linux_bridge.md)
 6. [Định dạng raw và qcow2](docs/raw_qcow2.md)
 7. [Cơ chế lưu trữ Thin và Thick](docs/thin_thick.md)
-8. [Tìm hiểu file xml](docs/.md)
+8. [Tìm hiểu file xml](https://github.com/duckmak14/linux/blob/master/KVM/docs/file_xml.md)
 9. [Tìm hiểu cơ chế snapshot](docs/snapshot.md)
 10. [Tìm hiểu cấu trúc CPUx86](docs/CPUx86.md)
 11. [Lab kiểm tra đường đi của kiểu mạng NAT](lab/nat.md)
