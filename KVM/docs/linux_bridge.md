@@ -1,4 +1,5 @@
 # 1.Khái niệm và Ứng dụng 
+- Linux bridge là một công nghệ để tạo ra virtual network 
 - linux bridge là một phần mềm được tích hợp vào trong nhân linux để giải quyết vấn đề ảo hóa phần network trong các máy vật lý.
 - Linux bridge như là một con switch ảo để cho các VM kết nối được vào và ta có thể nói chuyện được với nhau và ra mạng ngoài. Ta thấy rằng con switch được tạo ra nằm bên trong của máy vậy lý.
 - ![](https://github.com/niemdinhtrong/NIEMDT/blob/master/KVM/images/Linux-bridge/2.png)
@@ -53,27 +54,35 @@ wget http://centos-hn.viettelidc.com.vn/7.6.1810/isos/x86_64/CentOS-7-x86_64-Min
 ```
 ifconfig Tên_card(ens9) 0
 ```
+- Đây là ip của card `ens9` sau khi sử dụng lệnh trên 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/update/screenshot_1.png)
 
-- Sau đó xin cấp địa chỉ ip đó cho `br0` 
+- Sau đó xin cấp địa chỉ ip đó cho `bridge` 
 ```
 dhclient tên_bridge(br0)
 ```
-
+- Sau khi sử dụng lệnh trên thì card mạng bridge đã được cung cấp dải mạng 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/update/screenshot_2.png)
 - Sau khi ta chuyển xong card mạng thì ta sẽ thấy được rằng ip ở card ens9 đã mất 
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_6.png)
 - Rôi ta sử dụng card mạng này để tạo máy ảo. Ta phải chỉ ra đúng tên card mạng 
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_7.png)\
-- Ta kiểm tra ip xem có giống với card mạng bridge ta tạo ra không 
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_8.png)
-- Địa chỉ bridge(br0)
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_9.png)
+- Sau khi ta đã sử dụng kiểu mạng bridge thì card eth0 sẽ cùng địa chỉ mạng với tap(vnet0)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/update/screenshot_4.png)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/update/screenshot_3.png)
+- Ta kiểm tra ip xem có giống với dải card mạng bridge ta tạo ra không 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/update/screenshot_3.png)
+- Địa chỉ bridge
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/update/screenshot_5.png)
+- Như vậy ta đã thấy được VM được tạo ra có cùng dải mạng với lại card bridge mà ta tạo ra
 - Ta kiểm tra đường đi của máy xem có đi đúng đường không ta đi kiểm tra 3 điểm: 
     - card ens9 của host KVM 
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_10.png)
-    - card vm0(tap)
+    - card vnet0(tap)
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_12.png)
     - card eth0 của VM 
     - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/linux_bridge/screenshot_13.png)
+    - 
 - Như vậy ta thấy rằng card eth0 của VM đã được gắn thằng với switch được tạo ra bởi kiểu mạng `bridge` của host KVM tạo ra nên ta mới thấy rằng đường đi với nó có địa chỉ đầu và cuối giống nhau dù ta có bắt gói tin ở 3 điểm khác nhau.
 - Như vậy ta sẽ thấy mô hình đường đi của kiểu mạng linux_bridge là như sau 
 - ![](https://github.com/duckmak14/linux/blob/master/KVM/images/NAT.lab/Untitled%20Diagram.png)
