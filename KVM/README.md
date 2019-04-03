@@ -11,3 +11,4 @@
 9. [Tìm hiểu cơ chế snapshot](docs/snapshot.md)
 10. [Tìm hiểu cấu trúc CPUx86](docs/CPUx86.md)
 11. [Lab kiểm tra đường đi của kiểu mạng NAT](lab/nat.md)
+12. [DHCP trong KVM](lab/dhcp_kvm.md)
