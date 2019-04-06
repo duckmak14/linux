@@ -35,6 +35,36 @@ Ban đầu, Client chưa có địa chỉ IP và nó có thể biết hoặc kh�
 - Như phần trên thì ta cũng đã tìm hiểủ về DHCP là dịch vụ cấp phát địa chỉ IP động. Vậy trong KVM sự khác nhau giữa kiểu mạng là mô hình của nó. Và để chưng minh được sự khác nhau đó thì ta chứng minh rằng nơi cấp DHCP cho VM để thấy rõ được sự khác biệt giữa 2 kiểu mạng Bridge và NAT. 
 ## a) DHCP trong kiểu mạng NAT
 ### Để có thể tìm hiểu được giao thức DHCP trong kiểu mạng NAT ta cần chuẩn bị 
-- Một VM sử dụng NAT default có MAC (52:54:00:cb:73:32)
-- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_8.png)
-- Sau đó ta sử dụng lệnh tcpdump để bắt gói tin kèm theo dhclient 
+- Một VM sử dụng NAT default có MAC (52:54:00:cb:73:32) IP (192.168.122.134)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_9.png)
+- Nó có sử dụng card vnet0 của pc 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_10.png)
+- Sau đó ta sử dụng lệnh tcpdump để bắt gói tin kèm theo dhclient  
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_2.png)
+- Sau khi sử dụng dclient thì ta sẽ ghi nó vào file dhcp.pcap. Sau rồi ta chia sẻ file dhcp.pcap sang PC bằng lệnh `scp` để có thể nhìn thấy được các bản tin của DHCP 
+- Theo đúng như lý thuyết ta có 4 gói tin là : Discover; Offer; Request và ACK
+- Để có thể chứng minh được rằng ai là thằng ACK. gói tin mà sẽ được chuyển từ server đến client để thông báo cho client biết rằng nó có thể sử dụng được IP thì khi đó trên gói tin sẽ ghi đầy đủ địa chỉ của client và server 
+- ![]()
+- Như ta thấy thì ở đây có địa chỉ MAC của server và client là  `Src 52:54:00:d1:c5:a8 và Dst 52:54:00:cb:73:32` trong đó Src( địa chỉ nguồn) Dst( địa chỉ đích)
+- Thì cũng thấy `Src 52:54:00:d1:c5:a8` chính là địa chỉ của server và là địa chỉ của `NAT default` tạo ra là `virbr0` để cấp IP cho client 
+- ![]()
+- Vậy thì nơi cấp IP cho client ở NAT chính là `VM router` do NAT tạo ra 
+## b) DHCP trong kiểu mạng bridge 
+- Để có thể tìm hiểu được cái nào cấp DHCP VM trong kiểu mạng Bridge thì ta phải chuẩn bị được một VM có một số điều kiện sau: 
+    - Có cài KVM 
+    - Có file centos7.iso
+    - có 2 card mạng  
+    - Tạo bridge rồi add và ens9
+- Ta cũng chạy lệnh tcpdump để bắt gói tin như kiểu mạng NAT rồi cũng chia sẻ gói tin bằng scp ra ngoài pc rồi dùng wireshack để đọc gói tin 
+- card mạng NAT có địa chỉ MAC : 52:54:00:9a:d0:6d
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_6.png)
+- và card ens9(bridge) có địa chỉ MAC : 52:54:00:6a:62:2d
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_5.png) 
+- Ta tạo ra một VM ở trong host KVM này và có địa chỉ MAC: 52:54:00:9a:a2:7d 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_3.png)
+- Sau khi bắt gói tin bằng `tcpdump` thành công thì ta sử dụng scp để có thể chia sẻ gói tin bằng `scp` ra PC rồi dùng wireshack để đọc bản ACK 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_11.png)
+- ![]()
+- Như ta thấy thì `Src 52:54:00:01:5d:4d` và `Dst là 52:54:00:9a:a2:7d` trong đó Dst chính là client và là VM ta yêu cầu cấp IP còn src thì là MAC mà kiểu mạng NAT tạo ra cho Host KVM chứ không. nó là người cấp DHCP cho VM chứ không phải card do bridge tạo ra. 
+### Kết luận: Ta thấy được sự khác biệt của NAT và bridge là. Khi sử dụng kiểu mạng NAT thì nơi cấp DHCP cho VM chính là NAT cấp cho VM. Còn khi sử dụng kiểu mạng bridge thì bridge không thể cấp DHCP cho VM mà router nơi ta cắm mạng vào PC mới có thể cấp DHCP
+# 3. Đọc bản tin trong DHCP  
