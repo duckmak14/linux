@@ -2,9 +2,11 @@
 a) Khái niệm về giao thức DHCP 
 -   DHCP(Dynamic Host Configuration Protocol) : Là một giao thức cấp phát địa chỉ IP ; subnet mask; default gateway; dịch vụ DNS ( giao thức cấu thình host động)
 - Nó thường được cấp phát bởi DHPC server tích hợp trên router 
-
+- DHCP giao tiếp bằng UDP có port 67 và 68
+- DHCP server sử dụng port 67 để nghe và sử dụng port 68 để reply 
 b) Đặc điểm DHCP 
 - Làm việc theo mô hình Client/Server 
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot.png)
 - Giao thức DHCP sử dụng port 68 và port 67 
 - Ưu điểm khi sử dụng DHCP
     - Tập trung quản trị thông tin cấu hình I
@@ -32,4 +34,7 @@ Ban đầu, Client chưa có địa chỉ IP và nó có thể biết hoặc kh�
 # 2.DHCP trong KVM
 - Như phần trên thì ta cũng đã tìm hiểủ về DHCP là dịch vụ cấp phát địa chỉ IP động. Vậy trong KVM sự khác nhau giữa kiểu mạng là mô hình của nó. Và để chưng minh được sự khác nhau đó thì ta chứng minh rằng nơi cấp DHCP cho VM để thấy rõ được sự khác biệt giữa 2 kiểu mạng Bridge và NAT. 
 ## a) DHCP trong kiểu mạng NAT
-- 
+### Để có thể tìm hiểu được giao thức DHCP trong kiểu mạng NAT ta cần chuẩn bị 
+- Một VM sử dụng NAT default có MAC (52:54:00:cb:73:32)
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_8.png)
+- Sau đó ta sử dụng lệnh tcpdump để bắt gói tin kèm theo dhclient 
