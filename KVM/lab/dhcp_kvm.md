@@ -70,7 +70,7 @@ Ban đầu, Client chưa có địa chỉ IP và nó có thể biết hoặc kh�
 ### Kết luận: Ta thấy được sự khác biệt của NAT và bridge là. Khi sử dụng kiểu mạng NAT thì nơi cấp DHCP cho VM chính là NAT cấp cho VM. Còn khi sử dụng kiểu mạng bridge thì bridge không thể cấp DHCP cho VM mà router nơi ta cắm mạng vào PC mới có thể cấp DHCP
 # 3. Phân tích bản tin trong DHCP  
 ## a) DHCP DISCOVERY
-- ![]()
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_17.png)
 - Trong đó: 
 - 1: là địa chỉ đầu và địa chỉ cuối của gói tin ghi bằng MAC 
 - 2: là địa chỉ đầu và cuối nhưng được ghi bằng IPv4
@@ -79,7 +79,7 @@ Ban đầu, Client chưa có địa chỉ IP và nó có thể biết hoặc kh�
 - 5: MAC của client 
 - 6: IP client yêu cầu được cấp phát
 ## b) DHCP OFFER 
-- ![]()
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_18.png)
 - Option 54: chỉ đính danh DHCP server 
 - Option 51: thời gian cho thuê địa chỉ IP
 - Option 1: địa chỉ subnet Mask
@@ -87,11 +87,10 @@ Ban đầu, Client chưa có địa chỉ IP và nó có thể biết hoặc kh�
 - Option 3 : địa chỉ default gateway
 - Option 6 : địa chỉ DNS
 ## c) DHCP Request
-- ![]()
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_19.png)
 - Option 53: Kiểu tin nhắn 
 - Option 55: Danh sách tham số yêu cầu 
 - Option 50: Địa chỉ IP yêu cầu 
 ## d) DHCP ACK
-- ![]()
+- ![](https://github.com/duckmak14/linux/blob/master/KVM/images/dhcp_lab/screenshot_20.png)
 - Nhiệm vụ của gói tin này là để xác nhận lại thông tin đã cấp cho client
-- Option 15: Tên miền
