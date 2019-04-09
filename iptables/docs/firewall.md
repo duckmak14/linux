@@ -2,6 +2,8 @@
 ## mục lục 
 ## 1. Tổng quan về firewall
 ### 1.1) Khái niệm và chứ năng của firewall
+![](/images/Screenshot from 2019-04-09 08-13-39.png)
+
 Tường lửa là một thiết bị bảo mật mạng giám sát lưu lượng mạng đến và đi và quyết định xem có cho phép hoặc chặn lưu lượng cụ thể dựa trên một bộ quy tắc bảo mật.
 
 Tường lửa sẽ tạo ra một rào cản giữa mạng nội bộ và internet để chặn các lưu lượng không đáng tin cậy 
@@ -21,3 +23,9 @@ Firewall bao gồm:
 - Các phần mềm quản lý bảo mật hệ thống chạy trên máy chủ
 
 Các thành phần của firewall: 
+
+![](/images/2019-04-09_10-00.png)
+
+- Screening Router: là chặng kiểm soát đầu tiên cho LAN
+- DMZ: là vùng có nguy cơ bị tấn công 
+- Gateway Host: Là cổng ra và mạng LAN và DMZ 
