@@ -2,7 +2,8 @@
 ## mục lục 
 ## 1. Tổng quan về firewall
 ### 1.1) Khái niệm và chứ năng của firewall
-![](/iptables/images/2019-04-09_10-00.png)
+
+![](https://github.com/duckmak14/linux/blob/master/iptables/images/Screenshot%20from%202019-04-09%2008-13-39.png)
 
 Tường lửa là một thiết bị bảo mật mạng giám sát lưu lượng mạng đến và đi và quyết định xem có cho phép hoặc chặn lưu lượng cụ thể dựa trên một bộ quy tắc bảo mật.
 
