@@ -57,6 +57,20 @@ chmod 755 (tên file)
 chmod a+x (tên file)
 ```
 9. Thay đổi quyền sở hữu một file hoặc thư mục 
+```
+chown option user:group file/folder
+```
+- Ví dụ ta dùng user root tạo ra file test111 và chuyển quyền sở hữu sang cho user khác. và ta sẽ thấy sự thay đổi của nó.
+```
+[root@localhost ~]# mkdir test111
+[root@localhost ~]# ll
+total 940036
+drwxr-xr-x. 2 root root         6 16:15  9 Th04 test111
+[root@localhost ~]# chown anhduc test111/
+[root@localhost ~]# ll
+total 940036
+drwxr-xr-x. 2 anhduc root         6 16:15  9 Th04 test111
+```
 10. copy file1 thành file2
 ```
 cp (file1) (file2)
@@ -70,6 +84,16 @@ cp -r <directory1> <directory2>/
 date
 ``` 
 13. Sao lưu dữ liệu 
+```
+dd if=/dev/vda1 of=/root/vda1.anh
+```
+- Ta sao lưu ổ đĩa sang một file ảnh của nó 
+```
+[root@localhost ~]# dd if=/dev/vda1 of=/root/vda1.anh
+601697+0 records in
+601696+0 records out
+308068352 bytes (308 MB) copied, 1,39882 s, 220 MB/s
+```
 14. Hiển thị không gian đĩa 
 ```
 df -h
@@ -118,7 +142,15 @@ zip						install
 ```
 dpkg -L
 ```
-21. 
+21. Ước tính không gian đĩa, tệp 
+```
+du -bh (đường dẫn)
+```
+```
+[root@localhost ~]# du -bh /root/test/
+45	/root/test/
+
+```
 22. In ra biến môi trường 
 ```
 anhduc@anhduc:~$ x=10
