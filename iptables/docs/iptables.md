@@ -9,19 +9,19 @@ Hướng dẫn cài đặt iptables
 ```
 yum install -y iptables-services
 ```
-Cho phép iptables service khởi động cùng hệ thống
-```
-systemctl enable iptables
-```
 Tắt firewalld service
 ```
 systemctl stop firewalld
+systemctl mask firewalld
 ```
 Bật iptables service
 ```
 systemctl start iptables
 ```
-
+Cho phép iptables service khởi động cùng hệ thống
+```
+systemctl enable iptables
+```
 **Bạn vẫn có thể sử dụng iptables tại các phiên bản CentOS/RHEL7 tuy nhiên chỉ nên dùng 1 cái (hoặc firewalld hoặc iptables). Đối với CentOS/RHEL 7, khi bạn tắt firewalld (mặc định) hoặc tắt iptables service. Các iptables rules cũng sẽ biến mất -> Một số service hoạt động dựa trên nó như network default của KVM (LB) cũng sẽ bị ảnh hưởng**
 
 trong khi iptables service lưu cấu hình tại `/etc/sysconfig/iptables` và `/etc/sysconfig/ip6tables` thì firewalld lại lưu nó dưới dạng một loạt các file XML trong `/usr/lib/firewalld/` và `/usr/lib/firewalld/`.
